@@ -1,11 +1,21 @@
-var db = require('./../models');
+var Users = require('./../models').Users;
 
 module.exports = {
     index: function(req, res, next) {
+        Users.findAndCountAll()
+                .then((result) => {
+                    if (!result.rows) {
+                        return;
+                    }
 
-        return res.render('users', {
-            users: obj
-        });
+                    return res.render('users', {
+                        users: result.rows
+                    });
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+
     },
 
     new: function(req, res, next) {
