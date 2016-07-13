@@ -1,0 +1,19 @@
+<a href="/users/new">CRIAR</a>
+<table>
+    <thead>
+        <th>
+            <tr>NAME</tr>
+            <tr>AGE</tr>
+        </th>
+    </thead>
+    <tbody>
+        {{#each users}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{age}}</td>
+                <td>{{lastname}}</td>
+                <td>{{date}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
